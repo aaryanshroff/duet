@@ -63,7 +63,7 @@ const Register = () => {
         password: formData.password,
       });
       localStorage.setItem("token", token);
-      navigate("/");
+      navigate("/profile");
     }
   };
 
