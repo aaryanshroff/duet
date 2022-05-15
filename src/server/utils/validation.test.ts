@@ -24,6 +24,10 @@ test("different top level domains", () => {
   expect(validEmailRegex.test("aaryan@email.io")).toBe(true);
 });
 
+test("username with numbers only", () => {
+  expect(validEmailRegex.test("1234567890@email.com")).toBe(true);
+});
+
 // Invalid emails
 
 test("username only", () => {
@@ -40,4 +44,13 @@ test("encoded HTML", () => {
 
 test("spaces", () => {
   expect(validEmailRegex.test("aaryan @email.com")).toBe(false);
+});
+
+test("no top level domain", () => {
+  expect(validEmailRegex.test("aaryan@email")).toBe(false);
+});
+
+test("invalid characters", () => {
+  expect(validEmailRegex.test("”(),:;<>[]@email.com")).toBe(false);
+  expect(validEmailRegex.test("#@%^%#$@#$@#.com")).toBe(false);
 });
