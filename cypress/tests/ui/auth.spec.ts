@@ -24,7 +24,7 @@ describe("User Sign-up and Login", () => {
     cy.get("[data-cy=register-submit]").click();
 
     // Logout
-    cy.location("pathname").should("equal", "/");
+    cy.location("pathname").should("equal", "/profile");
     cy.get("[data-cy=logout-button]").click();
 
     // Login

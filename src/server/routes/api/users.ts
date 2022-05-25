@@ -12,9 +12,9 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   async (req: ReqUser, res) => {
     try {
-      const user = await db.users.find("users.id", req.user.user_id);
-      console.log(user);
-      return res.json(user);
+      console.log(req.user);
+      const results = await db.users.find("users.id", req.user.user_id);
+      return res.json(results[0]);
     } catch (err) {
       console.error(err);
       return res

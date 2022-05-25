@@ -7,8 +7,6 @@ import * as path from "path";
 
 const app = express();
 
-const port = process.env.PORT || 4001;
-
 // Middleware
 configurePassport(app);
 
@@ -25,4 +23,4 @@ app.get("*", function (req, res) {
   });
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+export default app;

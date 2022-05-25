@@ -15,7 +15,7 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         const data = await apiService("/api/users");
-        setUser(data[0]);
+        setUser(data);
         setIsLoaded(true);
       } catch (error) {
         console.error(error);
